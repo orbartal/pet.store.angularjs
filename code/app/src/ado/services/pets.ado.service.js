@@ -1,12 +1,12 @@
-﻿(function () {
+(function () {
     'use strict';
 
     angular
         .module('petStoreApp')
         .factory('PetsAdoService', PetsAdoService);
 
-    PetsAdoService.$inject = ['$q'];
-    function PetsAdoService($q) {
+    PetsAdoService.$inject = ['$http'];
+    function PetsAdoService($http) {
         var service = {};
         service.readById = readPetById;
         service.create = createPet;
@@ -15,24 +15,27 @@
 
         //public methods
         function readPetById(id) {
-            var result = {};
-            result.id = id;
-            result.name = "dog1";
-            result.status = "available";
-            return $q.when(result);
+            var url = getBaseUrl ();
+            return $http.get(url+'/'+id).then(onSuccess, onFailure);
         }
 
         function createPet(pet) {
-            return $q.when(pet);
+            var url = getBaseUrl ();
+            return $http.post(url, pet).then(onSuccess, onFailure);
         }
 
         function deletePet(id) {
-            return $q.when(true);
+            var url = getBaseUrl ();
+            return $http.delete(url+'/'+id).then(onSuccess, onFailure);
         }
 
         //private functions
+        function  getBaseUrl () {
+          return "http://localhost:8080/pet";
+        }
+
         function onSuccess(result) {
-        	return result;
+        	return result.data;
         }
 
         function onFailure(error) {
