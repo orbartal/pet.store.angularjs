@@ -1,0 +1,72 @@
+  <!DOCTYPE html>
+<html ng-app="petStoreApp">
+  <head>
+    <!--(1) /app/assets/libs/ -->
+		<!-- jquery -->
+		<script src="/app/assets/libs/jquery/dist/jquery.js"></script>
+		<!-- angular -->
+		<script src="/app/assets/libs/angular/angular.js"></script>
+		<!-- angular-ui-router -->
+		<script src="/app/assets/libs/angular-ui-router/release/angular-ui-router.js"></script>
+		<!-- angular-permission -->
+		<script src="/app/assets/libs/angular-permission/dist/angular-permission.js"></script>
+		<script src="/app/assets/libs/angular-permission/dist/angular-permission-ui.js"></script>
+		<!-- ui-bootstrap -->
+		<script src="/app/assets/libs/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+		<link href="/app/assets/libs/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+		<!-- toaster -->
+		<script src="/app/assets/libs/angularjs-toaster/toaster.js"></script>
+		<link href="/app/assets/libs/angularjs-toaster/toaster.css" rel="stylesheet">
+		<!-- metisMenu -->
+		<link href="/app/assets/libs/metisMenu/dist/metisMenu.css" rel="stylesheet">
+		<script src="/app/assets/libs/metisMenu/dist/metisMenu.js"></script>
+		<script src="/app/assets/libs/eeh-metis-menu/src/eeh-metis-menu.js"></script>
+		<!-- moment -->
+		<script src="/app/assets/libs/moment/moment.js"></script>
+		<!-- angular-animate -->
+		<script src="/app/assets/libs/angular-animate/angular-animate.js"></script>
+
+
+    <!--(2.0) config -->
+		<script src="/app/src/app.js"></script>
+		<script src="/app/src/config.js"></script>
+
+    <!--(2.1) dao services -->
+    <script src="/app/src/ado/services/tokens.ado.service.js"></script>
+    <script src="/app/src/ado/services/pets.ado.service.js"></script>
+
+    <!--(2.2) core services -->
+		<script src="/app/src/core/services/security/login.core.service.js"></script>
+    <script src="/app/src/core/services/security/authentication.core.service.js"></script>
+
+    <!--(2.3.1) ui services -->
+    <script src="/app/src/ui/services/pets.ui.service.js"></script>
+    <script src="/app/src/ui/services/dialog.ui.service.js"></script>
+
+    <!--(2.3.2) ui modal -->
+    <script src="/app/src/ui/modals/pets/delete/pet.delete.modal.js"></script>
+    <script src="/app/src/ui/modals/pets/create/pet.create.modal.js"></script>
+    <script src="/app/src/ui/modals/pets/read/pet.read.modal.js"></script>
+
+    <!--(2.3.3) ui directives -->
+    <script src="/app/src/ui/directives/main-site-menu/main.site.menu.directive.js"></script>
+    <link rel="stylesheet" href="/app/src/ui/directives/main-site-menu/main.site.menu.directive.css">
+    <script src="/app/src/ui/directives/main-side-menu/main.side.menu.directive.js"></script>
+    <link rel="stylesheet" href="/app/src/ui/directives/main-side-menu/main.side.menu.directive.css">
+
+	  <!--(2.3.4) ui page -->
+		<script src="/app/src/ui/pages/login/login.controller.js"></script>
+		<script src="/app/src/ui/pages/site/site.controller.js"></script>
+    <link rel="stylesheet" href="/app/src/ui/pages/site/site.style.css">
+		<script src="/app/src/ui/pages/pets/pets.controller.js"></script>
+
+  </head>
+
+  <body>
+
+    <div>
+      <div ui-view></div>
+    </div>
+
+  </body>
+</html>

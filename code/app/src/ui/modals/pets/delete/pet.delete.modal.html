@@ -1,0 +1,16 @@
+<div class="inmodal">
+    <div class="modal-header">
+        <h4 class="modal-title">Delete Pet</h4>
+    </div>
+    <input type="number" name="input" ng-model="vm.id" min="0" max="99" required>
+    <div class="modal-body">
+        <p>Are you sure you want to delete the Pet with id <strong>{{vm.id}}</strong>?</p>
+
+       <p class="class-error-message">{{vm.errorMessage}}</p>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-white" ng-click="vm.cancel()">Cancel</button>
+        <button type="button" class="btn btn-primary" ng-click="vm.ok()">Delete</button>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+.class-top-menu li a{
+    color: gray!important;
+}
+
+.class-top-menu li a:hover{
+	color: gray!important;
+	  font-weight: bold;
+	  text-decoration: underline;
+}
+
+.class-top-menu li a:focus {
+	color: white!important;
+}
