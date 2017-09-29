@@ -4,7 +4,7 @@
       <a class="navbar-brand" href="#">Pet Store</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span> {{currentUser.name}}</a></li>
+      <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span> {{getUserName()}}</a></li>
       <li ng-if= "currentUser"><a href="#" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> logOut</a></li>
       <li ng-if="!currentUser"><a href="#" ng-click="login()"><span class="glyphicon glyphicon-log-in"></span> logIn</a></li>
     </ul>

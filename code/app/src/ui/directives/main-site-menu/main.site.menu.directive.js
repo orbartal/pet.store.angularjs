@@ -15,13 +15,15 @@
         return directive;
 
         function MainSiteMenuController($scope){
-            $scope.currentUser = { "name" : "Admin"};
+            $scope.getUserName = getUserName;
             $scope.logout = logout;
             $scope.login = login;
 
+            function getUserName (){
+                return AuthenticationService.getUser ();
+            }
 
             function logout (){
-                //AuthenticationService.clearCredentials ();
                 $state.go("login");
             }
 
