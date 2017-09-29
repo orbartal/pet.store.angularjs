@@ -2,10 +2,10 @@
     'use strict';
 
      angular.module('petStoreApp').
-     	config(config).run(['$rootScope', '$state',  run]); // 'PermissionService'
+     	config(config).run(['$rootScope', '$state', 'PermissionService',  run]);
 
-     function run ($rootScope, $state){ //, PermissionService
-  	//	PermissionService.setConfig ();
+     function run ($rootScope, $state, PermissionService){
+  		  PermissionService.setConfig ();
       	$rootScope.$state = $state;
      }//End run
 
@@ -37,7 +37,13 @@
 		.state('site', {
 	            url: "",
 	            templateUrl: "/app/src/ui/pages/site/site.view.html",
-	            controller: "SiteCtrl as vm"
+	            controller: "SiteCtrl as vm",
+              data: {
+                 permissions: {
+                    except: 'anonymous',
+                    redirectTo: 'login'
+                 }
+              }
 	     })
 
 	    .state('site.pets', {
