@@ -12,13 +12,13 @@
         return service;
 
         function login(username, password) {
-            var requst = {'username' : username, 'password' : password};
-            TokensDataService.get (requst).then(onSuccess, onFailure);
+          //  var requst = {'username' : username, 'password' : password};
+            TokensDataService.get (username, password).then(onSuccess, onFailure);
 
             // private functions
             function onSuccess(response) {
-                var userData = response.data; //{"name" : username, 'role' : 'admin'};
-                AuthenticationService.setAuth(userData);
+                var token = response.data; //{"name" : username, 'role' : 'admin'};
+                AuthenticationService.setAuth(username, token);
                 $state.go("site.pets");
             }
 

@@ -5,24 +5,42 @@
         .module('petStoreApp')
         .service('AuthenticationService', AuthenticationService);
 
-    function AuthenticationService() {
+    function AuthenticationService () {
         var service = {};
-        service.currentUser = false;
-        service.getAuth = getAuth;
+        service.currentUser = null;
+        service.token = null;
+
+        service.getUser = getUser;
+        service.getToken = getToken;
         service.setAuth = setAuth;
         service.clearCredentials = clearCredentials;
         return service;
 
-        function getAuth () {
+        function getUser () {
             return service.currentUser;
         }
 
-        function setAuth (user) {
+        function getToken () {
+            return service.token;
+        }
+
+        function setAuth (user, token) {
+            service.token = processToken (token);
             service.currentUser = user;
+
+            function processToken (token){
+                if (angular.isString(token)){
+                  return token;
+                }else{
+                   return JSON.stringify(token);
+                }
+            }
+
         }
 
         function clearCredentials() {
             service.currentUser = null;
+            service.token = null;
         }
     }//End AuthenticationService
 })();
