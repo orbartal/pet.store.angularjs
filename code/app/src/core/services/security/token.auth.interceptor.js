@@ -13,24 +13,7 @@
 
         function request1 (config){
             config.headers.authorization =  AuthenticationService.getToken();
-            config.headers['orbartal'] = 'blue cat';
             return config;
         }
     }
 })();
-
-/*
-angular
-  .module('petStoreApp').factory('MyInterceptor',[MyInterceptor]);
-
-  function MyInterceptor (){
-    return {
-      request: function(config){
-         config.headers.authorization = "token";
-         config.headers['x-csrf-token'] = 'lalalalala';
-          config.headers['orbartal'] = 'blue cat';
-        return config;
-      }
-    }
-  }//function
-*/

@@ -45,9 +45,5 @@
 	            templateUrl: "/app/src/ui/pages/pets/pets.view.html",
               controller: "PetsCtrl as vm"
 	     })
-
-    //   $httpProvider.interceptors.push('MyInterceptor');
-
-
     }
 })();
