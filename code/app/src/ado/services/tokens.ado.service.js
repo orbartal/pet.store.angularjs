@@ -3,24 +3,30 @@
 
     angular
         .module('petStoreApp')
-        .factory('TokensDataService', TokensDataService);
+        .factory('TokensAdoService', TokensAdoService);
 
-    TokensDataService.$inject = ['$http'];
-    function TokensDataService ($http) {
+    TokensAdoService.$inject = ['$http'];
+    function TokensAdoService ($http) {
     	var service = {};
-        service.get = get;
+        service.getByPassword = getByPassword;
+        service.getByNothing = getByNothing;
         return service;
 
         //public methods
-        function get (username, password) {
-            var url = getBaseUrl ();
-            var url2 = url+'/'+username+'/'+password;
-            return $http.get(url2).then(onSuccess, onFailure);
+        function getByNothing () {
+            var url = getBaseUrl ()+"/nothing";
+            return $http.get(url).then(onSuccess, onFailure);
+        }
+
+        function getByPassword (username, password) {
+            var url = getBaseUrl () + "/password";
+            var url = url+'/'+username+'/'+password;
+            return $http.get(url).then(onSuccess, onFailure);
         }
 
         //private functions
         function  getBaseUrl () {
-          return "http://localhost:8080/tokens/password";
+          return "http://localhost:8080/tokens";
         }
 
         function onSuccess(result) {
