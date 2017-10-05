@@ -3,10 +3,22 @@
 		<nav class="sidebar-nav">
 			<ul class="metismenu side-main-menu" id="sideMenu">
 				<li>
-					 <a ui-sref="site.pets">pets</a>
+					 <a id="idLinkTokens" ui-sref="tokens">tokens</a>
 				</li>
-				<li><a>Entities</a>
+				<li>
+					 <a ui-sref="login">login</a>
+				</li>
+				<li>
+					 <a id="idLinkSiteHello" ui-sref="site.hello">hello</a>
+				</li>
+				<li>
+					 <a id="idLinkSitePets" ui-sref="site.pets">pets</a>
+				</li>
+				<li><a>Site</a>
 					<ul aria-expanded="true" class="collapse">
+						<li>
+		 					 <a ui-sref="site.hello">hello</a>
+		 				</li>
 						<li>
 		 					 <a ui-sref="site.pets">pets</a>
 		 				</li>
