@@ -28,6 +28,12 @@
     $urlRouterProvider.otherwise("login");
 		$stateProvider
 
+    .state('tokens', {
+             url: "/tokens",
+             templateUrl:  "/app/src/ui/pages/tokens/tokens.view.html",
+             controller: "TokensCtrl as vm"
+      })
+
 		.state('login', {
 	            url: "/login",
 	            templateUrl:  "/app/src/ui/pages/login/login.view.html",
@@ -45,6 +51,12 @@
                  }
               }
 	     })
+
+       .state('site.hello', {
+                url: "/hello",
+                templateUrl:  "/app/src/ui/pages/hello/hello.view.html",
+                controller: "HelloCtrl as vm"
+      })
 
 	    .state('site.pets', {
 	            url: "/pets",
