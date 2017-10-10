@@ -11,7 +11,15 @@
         vm.login = login;
 
         function login() {
-          LoginService.login (vm.username, vm.password);
+          LoginService.login(vm.username, vm.password).then(onSuccess,onFailure);
+
+          function onSuccess(){
+            vm.errorMessage = 'Success';
+    			};
+
+    			function onFailure(error) {
+    				vm.errorMessage = error.data.message;
+    			};
         }
     }
 })();

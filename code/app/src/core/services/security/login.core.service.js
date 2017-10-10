@@ -12,11 +12,11 @@
         return service;
 
         function login(username, password) {
-            TokensAdoService.getByPassword (username, password).then(onSuccess, onFailure);
+            return TokensAdoService.getByPassword (username, password).then(onSuccess, onFailure);
 
             // private functions
             function onSuccess(response) {
-                var token = response.data.token;
+                var token = response.data;
                 AuthenticationService.setAuth(username, token);
                 $state.go("site.pets");
             }

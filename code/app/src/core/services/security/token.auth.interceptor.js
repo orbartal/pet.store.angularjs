@@ -13,6 +13,7 @@
 
         function request1 (config){
             config.headers.authorization =  AuthenticationService.getToken();
+            config.headers.orbartal =  AuthenticationService.getToken();
             return config;
         }
     }
