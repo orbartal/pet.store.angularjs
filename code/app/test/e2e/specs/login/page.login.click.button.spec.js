@@ -16,8 +16,8 @@ describe('Test pet store - page login - click button', function() {
 
     m_mock ([{
        request: {
-         path: 'http://localhost:8080/tokens/password/admin/admin',
-         method: 'GET'
+         path: 'http://localhost:8080/tokens',
+         method: 'POST'
        },
        response: {
          data: {

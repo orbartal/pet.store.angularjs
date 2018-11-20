@@ -19,9 +19,11 @@
         }
 
         function getByPassword (username, password) {
-            var url = getBaseUrl () + "/password";
-            var url = url+'/'+username+'/'+password;
-            return $http.get(url).then(onSuccess, onFailure);
+            var data = {'username': username, 'password': password};
+            var headers = {'Content-Type': 'application/x-www-form-urlencoded'};
+            var url = getBaseUrl ();
+            var params = {url: url,method: "POST",  params: data};
+            return  $http(params).then(onSuccess, onFailure);
         }
 
         //private functions

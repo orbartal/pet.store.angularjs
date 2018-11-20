@@ -26,11 +26,10 @@ var LoginPageObject = function() {
 
  this.getLoginMock = function(name, password) {
    var toeknObj = {'role' : 'admin', 'name' : name, 'password' : password};
-    //"{\"role\":\"admin\",\"credentials\":\"pass\",\"name\":\"admin\"}"
    var loginMock = {
      request: {
-         path: 'http://localhost:8080/tokens/password/' + name + '/' + password,
-         method: 'GET'
+         path: 'http://localhost:8080/tokens',
+         method: 'POST'
      },
      response: {
        data: {

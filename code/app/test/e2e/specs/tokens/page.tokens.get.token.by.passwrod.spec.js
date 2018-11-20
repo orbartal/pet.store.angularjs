@@ -6,8 +6,8 @@ describe('pet store - page tokens - get token by password', function() {
 
     m_mock ([{
        request: {
-         path: 'http://localhost:8080/tokens/password/admin/admin',
-         method: 'GET'
+         path: 'http://localhost:8080/tokens',
+         method: 'POST'
        },
        response: {
          data: {
