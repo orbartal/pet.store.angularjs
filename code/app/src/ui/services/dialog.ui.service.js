@@ -24,6 +24,7 @@
 
         function getUiModal (strTemplateUrl, strController, objResolver) {
             var modalInstance = $uibModal.open({
+                  animation  : false,
                   backdrop : 'static',
                   size: "lg",
                   templateUrl: strTemplateUrl,
