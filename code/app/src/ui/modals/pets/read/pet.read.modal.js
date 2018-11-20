@@ -20,7 +20,6 @@
 
 			function onSuccess(pet){
         vm.pet = pet;
-				//$uibModalInstance.close(vm.pet);
 			};
 
 			function onFailure(error) {
@@ -29,7 +28,7 @@
 		};
 
 		function close() {
-			$uibModalInstance.close('close');
+			$uibModalInstance.dismiss('cancel');
 		};
 	}
 
