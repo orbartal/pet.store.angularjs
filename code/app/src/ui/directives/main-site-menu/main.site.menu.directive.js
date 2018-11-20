@@ -24,7 +24,7 @@
             }
 
             function logout (){
-                $state.go("login");
+                AuthenticationService.clearCredentials();
             }
 
             function login(){
